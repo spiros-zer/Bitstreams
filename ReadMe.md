@@ -1,3 +1,4 @@
+# BitstreamsLibrary
 ### BitstreamsLibrary Converts data to binary data in the form of uint8_t. ###
 The library is templated, but currently only array of doubles is supported.
 
