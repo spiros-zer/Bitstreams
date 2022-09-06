@@ -1,4 +1,4 @@
-#include "BitstreamsLibrary.h"
+#include "Bitstream.h"
 
 int main(int argc, char** argv)
 {
