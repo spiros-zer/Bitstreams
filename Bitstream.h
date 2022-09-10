@@ -38,6 +38,8 @@ public:
     template<std::size_t N>
     Bitstream(const double (&Obj2Data)[N]);
 
+    Bitstream();
+
     /**
      * @brief Get the Bitstream object.
      * 
@@ -70,6 +72,9 @@ public:
      * 
      */
     void PrintBinary();
+
+    template<typename T>
+    void AddData(T Data);
 };
 
 template<std::size_t N>
@@ -95,5 +100,16 @@ void Bitstream::Data2Obj(std::vector<T>& OutVectorOfObjs)
         T Obj;
         memcpy(&Obj, Data + Offset, sizeof(T));
         OutVectorOfObjs.emplace_back(Obj);
+    }
+}
+
+template<typename T>
+inline void Bitstream::AddData(T Object)
+{
+    const uint8_t* Data = (uint8_t*)&Object; // Conversion of double to uint8_t
+    for (size_t Datum = 0; Datum < sizeof(Object); ++Datum) // Since the converted data is an array we iterate through it
+    {
+        _bitstream.emplace_back(Data[Datum]);
+        ++_sizeOfBitstream;
     }
 }

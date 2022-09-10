@@ -3,6 +3,11 @@
 
 #include "Bitstream.h"
 
+Bitstream::Bitstream()
+{
+
+}
+
 int Bitstream::GetSizeOfBitstream()
 {
     return _sizeOfBitstream;
