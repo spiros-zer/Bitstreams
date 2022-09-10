@@ -3,6 +3,11 @@
 
 #include "Bitstream.h"
 
+int Bitstream::GetSizeOfBitstream()
+{
+    return _sizeOfBitstream;
+}
+
 void Bitstream::PrintBinary()
 {
     short unsigned BitCounter{ 0 };

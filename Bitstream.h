@@ -2,6 +2,7 @@
 
 
 #pragma once
+
 #include <vector>
 #include <iostream>
 
@@ -24,7 +25,7 @@ private:
      * std::vector.
      * 
      */
-    unsigned int _sizeOfBitstream = 0;
+    int _sizeOfBitstream = 0;
 
 public:
 
@@ -56,6 +57,13 @@ public:
      */
     template<typename T>
     void Data2Obj(std::vector<T>& OutVectorOfObjs);
+
+    /**
+     * @brief Gets the SizeofBitstream object.
+     * 
+     * @return The number of bytes in the bitstream.
+     */
+    int GetSizeOfBitstream();
 
     /**
      * @brief Prints the contents of _bitstream field in hex.
