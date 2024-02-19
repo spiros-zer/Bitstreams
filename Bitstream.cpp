@@ -19,11 +19,11 @@ void Bitstream::PrintBinary()
     std::cout << "Bit0\tBit1\tBit2\tBit3\tBit4\tBit5\tBit6\tBit7\n";
     for (uint8_t Byte : _bitstream)
     {
-        std::cout << std::hex << static_cast<int>(Byte) << "\t";
+        std::cout << std::hex << static_cast<int>(Byte) << "\t\t";
         if (!(BitCounter >= 7 ? BitCounter = 0 : ++BitCounter))
         {
-            std::cout << "\n";
+            std::cout << '\n';
         }
     }
-    std::cout << std::endl;
+    std::cout << '\n';
 }
